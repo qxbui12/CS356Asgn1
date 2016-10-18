@@ -35,7 +35,7 @@ public class SimulationDriver {
 		ans1.add("C");
 		//add question, choices, and answers to the question class
 		run.configQA(questionType, qstn1, choice1, ans1);
-		randomStudents();
+		randomStudentAnswers();
 		
 		System.out.println();
 		
@@ -49,20 +49,16 @@ public class SimulationDriver {
 		ans2.add("1");
 		//add question, choices, and answers to the question class
 		run.configQA(questionType, qstn2, choice2, ans2);
-		randomStudents();
+		randomStudentAnswers();
 	}
 	
-	// Generates a random total number of student inputs
-	private static void randomStudents() {
-		int numberOfStudentsAns = random.nextInt(32) + 3;
-		randomStudentAnswers(numberOfStudentsAns);
-	}
 	
 	// Generates student IDs and answers and stores data to hashtable
-	private static void randomStudentAnswers(int numberOfStudentsAns) {
+	private static void randomStudentAnswers() {
+		int numberOfStudentsAns = random.nextInt(32) + 3;
 		table = new Hashtable<Integer, Student>();
 		for (int i = 0; i <= numberOfStudentsAns; i++) {
-			int studentID = random.nextInt(550) + 1;
+			int studentID = random.nextInt(50) + 1;
 			int studentChoices = 0;
 			String possibleAns = "";
 			char[] temporaryAnswer;
